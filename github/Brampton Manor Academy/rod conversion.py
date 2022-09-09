@@ -1,40 +1,37 @@
-rods = float(input("rods "))
-print("your input", rods)
-
-def metres(rods):
-    rods *= 5.0292
-    
+def rods_input():
+    rods = float(input("rods "))
+    print(f"your input {rods}")
     return rods
 
-    
-def feet(f):
-    f = x * 0.3048
-    
-    return(f)
+def metres(rods):
+    rods_to_metres = rods / 5.0292 
+    print(f"metres: {rods_to_metres}")
+    return rods_to_metres
 
-def miles(m):
-    m = x * 1609.34
     
-    return(m)
+def feet(rods_to_metres):
+    metres_to_feet = rods_to_metres * 0.3048 
+    print(f"feet: {metres_to_feet}")
+    return metres_to_feet
+
+def miles(rods_to_metres):
+    metres_to_miles = rods_to_metres * 1609.34
+    print(f"miles: {metres_to_miles}")
+    return metres_to_miles
 
 def furlongs(rods):
-    h = rods / 40
-   
-    return(h)
+    rods_to_furlongs = rods / 40
+    print(f"furlongs: {rods_to_furlongs}")
+    return(rods_to_furlongs)
 
-def walkspeed(m):
-    ws = m / 60
+def walkspeed(rods_to_metres):
+    ws = rods_to_metres / 60
+    print(f"walkspeed: {ws}")
     return ws
 
-x = metres(rods)
-print(rods)
-f = feet(x)
-print(x)
-m = miles(x)
-print(m)
-h = furlongs(rods)
-print(h)
-ws = walkspeed(m)
-print(ws)
-
-
+rods = rods_input()
+rods_to_metres = metres(rods)
+metres_to_feet = feet(rods_to_metres)
+metres_to_miles = miles(rods_to_metres)
+rods_to_furlongs = furlongs(rods)
+ws = walkspeed(rods_to_metres)
