@@ -29,9 +29,19 @@ def walkspeed(rods_to_metres):
     print(f"walkspeed: {ws}")
     return ws
 
-rods = rods_input()
-rods_to_metres = metres(rods)
-metres_to_feet = feet(rods_to_metres)
-metres_to_miles = miles(rods_to_metres)
-rods_to_furlongs = furlongs(rods)
-ws = walkspeed(rods_to_metres)
+def first_function():
+    rods = rods_input()
+    return rods
+
+
+def second_function():
+    rods = first_function()
+    rods_to_metres = metres(rods)
+    metres_to_feet = feet(rods_to_metres)
+    metres_to_miles = miles(rods_to_metres)
+    rods_to_furlongs = furlongs(rods)
+    ws = walkspeed(rods_to_metres)
+
+if __name__ == "__main__":
+    second_function()
+    
