@@ -1,15 +1,14 @@
 import unittest
 
-from mycode import *
+from wind_chill import *
 
 
 class MyFirstTests(unittest.TestCase):
 
-    def test_hello(self):
-        self.assertEqual(hello_world(), 'hello world')
+    def windchill_test(self):
+        self.assertEqual(windchill(10, 15), -6.5895344209562525)
 
-    def test_custom_num_list(self):
-        self.assertEqual(len(create_list(10)), 10)
+    
 
 if __name__ == '__main__':
     unittest.main()
