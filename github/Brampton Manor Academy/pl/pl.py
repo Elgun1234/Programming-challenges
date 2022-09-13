@@ -40,6 +40,9 @@ if __name__ == "__main__":
             dictionary[home][0]+=1
             dictionary[away][0]+=1
 
-        
+        gd = homegoals - away goals
+        dictionary[home] += gd
+        dictionary[away] -= gd
+        gd = 0
 
     print(dictionary)
