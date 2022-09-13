@@ -19,7 +19,11 @@ def read_csv(csv_file):
 
 if __name__ == "__main__":
     file_contents = read_csv(csv_file)
+    team = "team"
+    points = "points"
+    goal_diff = "goal difference"
     
+
     dictionary = {}
     for row in file_contents:
         home = row[1]
@@ -27,6 +31,8 @@ if __name__ == "__main__":
         homegoals = row[3]
         awaygoals = row[4]
         winner = row[5]
+        
+        
         if home not in dictionary:
             dictionary[home] = [0,0]
         if away not in dictionary:
@@ -39,10 +45,29 @@ if __name__ == "__main__":
         else:
             dictionary[home][0]+=1
             dictionary[away][0]+=1
-
-        gd = homegoals - away goals
-        dictionary[home] += gd
-        dictionary[away] -= gd
+        
+        
+        gd = int(homegoals) - int(awaygoals)
+        dictionary[home][1] += gd
+        dictionary[away][1] -= gd
         gd = 0
 
-    print(dictionary)
+    
+    
+    dic2 = {}
+    for i in sorted(dictionary):
+        dic2 = dict(sorted(dictionary.items(),key= lambda x:x[1],reverse=True))
+    
+    print(f"{team:17} {points:12} {goal_diff:20}\n")
+
+    
+    
+    for key in dic2:
+        
+        point = dic2[key][0]
+        goal_difference = dic2[key][1]
+        print(f"{key:10} {point:10} {goal_difference:10}")
+
+   
+   
+
