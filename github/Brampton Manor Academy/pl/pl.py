@@ -51,6 +51,8 @@ if __name__ == "__main__":
         dictionary[home][1] += gd
         dictionary[away][1] -= gd
         gd = 0
+            
+        
 
     
     
@@ -68,6 +70,5 @@ if __name__ == "__main__":
         goal_difference = dic2[key][1]
         print(f"{key:10} {point:10} {goal_difference:10}")
 
-   
    
 
