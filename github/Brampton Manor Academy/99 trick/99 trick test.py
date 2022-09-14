@@ -1,5 +1,12 @@
-you = int(input("*you* This will be the answer. select a number betwee 10-49: "))
-player = int(input("*player* Pick any number 50-99: "))
+import unittest
 
-factor = 99 - you
-player + factor = x
+from trick_99 import *
+
+
+class MyFirstTests(unittest.TestCase):
+
+    def factor_test(self):
+        self.assertEqual(factor(), 79)
+
+if __name__ == '__main__':
+    unittest.main()
