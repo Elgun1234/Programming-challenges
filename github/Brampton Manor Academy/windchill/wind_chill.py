@@ -1,12 +1,12 @@
 def measurements(wind_chill):
-    air_temp = float(input("enter air temp "))
-    wind_speed = float(input("enter wind speed "))
-    print(f"temperature: {air_temp}\nSpeed: {wind_speed}\nWindchill: {wind_chill}")
+    air_temp = float(input("air temp: "))
+    wind_speed = float(input("wind speed: "))
+    print(f"Windchill: {wind_chill}")
     return air_temp, wind_speed
 
 def windchill(air_temp, wind_speed):
-    wind_chill = 35.74 + 0.6215 * air_temp - 35.75 *  air_temp**0.16 + 0.4275 * air_temp * wind_speed**0.16
-    print(f"Temperature of {air_temp} and speed of {wind_speed} gives windchill of: {wind_chill}
+    wind_chill = 35.74 + 0.6215 * air_temp - 35.75 *  wind_speed**0.16 + 0.4275 * air_temp * wind_speed**0.16
+    print(f"Temperature of {air_temp} and speed of {wind_speed} gives windchill of: {wind_chill}")
     return wind_chill
     
 
