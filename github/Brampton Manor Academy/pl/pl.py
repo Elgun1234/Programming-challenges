@@ -17,7 +17,9 @@ def read_csv(csv_file):
     return csv_contents
 
 
-if __name__ == "__main__":
+
+
+def pl_table():
     file_contents = read_csv(csv_file)
     team = "team"
     points = "points"
@@ -47,10 +49,12 @@ if __name__ == "__main__":
             dictionary[away][0]+=1
         
         
-        gd = int(homegoals) - int(awaygoals)
-        dictionary[home][1] += gd
-        dictionary[away][1] -= gd
-        gd = 0
+        
+        dictionary[home][1] += int(homegoals)
+        dictionary[home][1] -= int(awaygoals)
+
+        dictionary[away][1] += int(awaygoals)
+        dictionary[away][1] -= int(homegoals)
             
         
 
@@ -69,6 +73,9 @@ if __name__ == "__main__":
         point = dic2[key][0]
         goal_difference = dic2[key][1]
         print(f"{key:10} {point:10} {goal_difference:10}")
+
+if __name__ == "__main__":
+    pl_table()
 
    
 
