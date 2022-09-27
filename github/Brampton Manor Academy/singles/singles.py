@@ -12,6 +12,7 @@ def scrape(url):
 def finder():
     k = 0
     i = 0
+    x = " "
     pos = "Postion"
     song = "Song"
     art = "Artist"
@@ -32,12 +33,11 @@ def finder():
         artist_open = newstring.find('/">',name_close)
         artist_close = newstring.find('</a>',artist_open)
         artist = newstring[artist_open+len(lookingfor2):artist_close]
-        print(f"{rank:>3} {name:>50} {artist:>60}")
+        print(f"{x} {rank:40} {name:45} {artist}")
         k += 1
     
 
 if __name__ == "__main__":
     html = scrape(url)
     finder()
-
     
