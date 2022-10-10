@@ -8,11 +8,35 @@ def reader():
         next(apple_data)
         for i in apple_data:
             data.append(i)
-def apple():
+    return data
+
+
+def apple(data):
     dictionary = {}
+    vol = 0
     for i in data:
-        date = data[0]
-         date.
+        date = i[0]
+        split_date = date.split("-")
+        year_month = split_date[0] + "-" + split_date[1]
+        if year_month not in dictionary:            
+            dictionary[year_month] = [,,]
+            dictionary[year_month][0] += adj_close * volume
+            dictionary[year_month][1] += volume
+            dictionary[year_month][2] += day_sales / vol
+            
+        else:
+            adj_close = float(i[5])
+            volume = int(i[6])
+            dictionary[year_month][0] += adj_close * volume
+            dictionary[year_month][1] += volume
+            dictionary[year_month][2] += day_sales / vol 
+    print(dictionary)    
+
+   
         
+        
+
+data = reader()
+apple(data)
 
 
