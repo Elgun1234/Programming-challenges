@@ -16,20 +16,20 @@ def apple(data):
     vol = 0
     for i in data:
         date = i[0]
+        adj_close = float(i[5])
+        volume = int(i[6])
         split_date = date.split("-")
         year_month = split_date[0] + "-" + split_date[1]
         if year_month not in dictionary:            
-            dictionary[year_month] = [,,]
+            dictionary[year_month] = [0,0,0]
             dictionary[year_month][0] += adj_close * volume
             dictionary[year_month][1] += volume
-            dictionary[year_month][2] += day_sales / vol
+            dictionary[year_month][2] += dictionary[year_month][0] / dictionary[year_month][1] 
             
-        else:
-            adj_close = float(i[5])
-            volume = int(i[6])
+        else:            
             dictionary[year_month][0] += adj_close * volume
             dictionary[year_month][1] += volume
-            dictionary[year_month][2] += day_sales / vol 
+            dictionary[year_month][2] += dictionary[year_month][0] / dictionary[year_month][1] 
     print(dictionary)    
 
    
@@ -38,5 +38,3 @@ def apple(data):
 
 data = reader()
 apple(data)
-
-
