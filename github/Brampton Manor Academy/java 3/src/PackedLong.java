@@ -10,21 +10,18 @@ public class PackedLong {
 
 
         // set "check" to equal 1 if the "position" bit in "packed" is set to 1
-        long check = (packed>>position)&1
+        long check = (packed>>position) & 1L;
 
         return (check == 1);
     }
 
-    /*
-     * Set the nth bit in the packed number to the value given
-     * and return the new packed number
-     */
+
     public static long set(long packed, int position, boolean value) {
-        if (value) {
-            // TODO: complete this
+        if (value ) {
+            packed = packed | (1L<<position);
             // update the value "packed" with the bit at "position" set to 1
         }else {
-            // TODO: complete this
+            packed = packed & ~(1L<<position);
             // update the value "packed" with the bit a "position" set to 0
         }
         return packed;
