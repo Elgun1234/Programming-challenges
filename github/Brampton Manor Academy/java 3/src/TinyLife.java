@@ -3,10 +3,18 @@ public class TinyLife {
 
     }
     long oscillator = 0x20272000037303L;
-    long glider = 0x20A0600000000000;
+    long glider = 0x20A0600000000000L;
 
-    public static boolean getCell(long world,int col, int row){}
-    public static long setCell(long world, int col, int col, int row, boolean value){}
+    public static boolean getCell(long world,int col, int row){
+
+
+
+    }
+    public static long setCell(long world, int col, int col, int row, boolean value){
+
+
+
+    }
     public static void print(long world){
         System.out.println("-");
         for (int row = o;row<8;row++){
@@ -18,5 +26,5 @@ public class TinyLife {
     }
     public static int countNeighbours(long world, int col, int row){}
     public static boolean computeCell(long world,int col, int row){}
-    public static long nextGeneration(long world)
+    public static long nextGeneration(long world){}
 }
