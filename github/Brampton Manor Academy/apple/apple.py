@@ -36,7 +36,7 @@ def apple(data):
         dictionary[year_month][1] += volume
         dictionary[year_month][0] += volume * adj_close
         if k == len(data)-1:
-            future_year_month + "1"
+            future_year_month = "1"
         if year_month != future_year_month:
             dictionary[year_month][2]=  dictionary[year_month][0] / dictionary[year_month][1]
     
@@ -45,12 +45,16 @@ def apple(data):
             
           
     ordered_dict = sorted(dictionary.items(), key=lambda x:x[1][2])
-    for i in range(0,7):
-        a = ordered_dict[i][0]
-        b = ordered_dict[i][1][0]
-        c = ordered_dict[i][1][1]
+    print("worst 10 months")
+    for i in range(0,9):
+        a = ordered_dict[i][0]                
         d = ordered_dict[i][1][2]
-        print(a,b,c,d)
+        print(f"{a}   {d}")
+    print("best 10 months")
+    for i in range(len(ordered_dict)-1,len(ordered_dict)-11,-1):
+        a = ordered_dict[i][0]                
+        d = ordered_dict[i][1][2]
+        print(f"{a}   {d}")
      
         
 
