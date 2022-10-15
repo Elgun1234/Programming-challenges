@@ -58,5 +58,6 @@ def apple(data):
      
         
 
-data = reader()
-apple(data)
+if __name__ == "__main__":
+    data = reader()
+    apple(data)
