@@ -1,8 +1,9 @@
 def answer():
-    while True :
+    valid = False
+    while not valid :
         answer = int(input("YOU: select a number between 10 and 49 "))
         if answer > 10 and answer <49:
-            break
+            valid = True
     return answer
 
 def factor():
